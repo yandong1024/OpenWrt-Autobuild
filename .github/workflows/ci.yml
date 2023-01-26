@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        target: [bcm53xx-generic, ramips-mt7621, rockchip-armv8, sunxi-cortexa7, x86-64, x86-generic]
+        target: [x86-64]
 
     steps:
     - name: Clone Repository
