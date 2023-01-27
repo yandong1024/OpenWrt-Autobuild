@@ -3,6 +3,11 @@
 # create directory
 [[ ! -d package/new ]] && mkdir -p package/new
 
+# PassWall 
+cp -rf ../passwall-packages/*  package/new/
+cp -rf ../passwall-luci/*  package/new/
+rm -rf ./feeds/packages/net/{xray-core,shadowsocks-libev}
+
 # Access Control
 cp -rf ../immortalwrt-luci/applications/luci-app-accesscontrol package/new/
 
@@ -80,9 +85,9 @@ cp -rf ../immortalwrt-luci/applications/luci-app-autoreboot package/new/
 svn export -q https://github.com/tty228/luci-app-serverchan/trunk package/new/luci-app-serverchan
 
 # ShadowsocksR Plus+
-svn export -q https://github.com/fw876/helloworld/trunk package/helloworld
-svn export -q https://github.com/coolsnowwolf/packages/trunk/net/shadowsocks-libev package/helloworld/shadowsocks-libev
-rm -rf ./feeds/packages/net/{xray-core,shadowsocks-libev}
+#svn export -q https://github.com/fw876/helloworld/trunk package/helloworld
+#svn export -q https://github.com/coolsnowwolf/packages/trunk/net/shadowsocks-libev package/helloworld/shadowsocks-libev
+#rm -rf ./feeds/packages/net/{xray-core,shadowsocks-libev}
 
 # USB Printer
 cp -rf ../immortalwrt-luci/applications/luci-app-usb-printer package/new/
