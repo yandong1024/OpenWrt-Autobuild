@@ -6,7 +6,7 @@
 # PassWall 
 cp -rf ../passwall-packages/*  package/new/
 cp -rf ../passwall-luci/*  package/new/
-rm -rf ./feeds/packages/net/{xray-core,shadowsocks-libev}
+rm -rf ./feeds/packages/net/xray-core
 
 # Access Control
 cp -rf ../immortalwrt-luci/applications/luci-app-accesscontrol package/new/
