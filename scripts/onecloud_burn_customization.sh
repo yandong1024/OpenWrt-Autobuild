@@ -48,11 +48,11 @@ cat <<EOF >>burn/commands.txt
 PARTITION:boot:sparse:boot.simg
 PARTITION:rootfs:sparse:rootfs.simg
 EOF
-prefix=$(ls openwrt/bin/targets/*/*/*.img | sed 's/\.img$//')
-burnimg=${prefix}.burn.img
+prefix=$(ls openwrt/bin/targets/*/*/*.img | sed 's/sdcard.img$/emmc/')
+burnimg=${prefix}.img
 ./AmlImg pack $burnimg burn/
 
-for f in openwrt/bin/targets/*/*/*.burn.img; do
+for f in openwrt/bin/targets/*/*/*-emmc.img; do
     gzip "$f"
 done
 sudo rm -rf openwrt/bin/targets/*/*/*.img
