@@ -12,15 +12,13 @@ on:
         options:
         - master
         - 23.05
-        - 22.03
       targets:
         description: 'target devices'
         required: true
-        default: "['x86-64']"
+        default: "['meson-meson8b', 'x86-64']"
         type: choice
         options:
         - "['meson-meson8b']"
-        - "['x86-64']"
         - "['meson-meson8b', 'x86-64']"
 
 jobs:
@@ -57,11 +55,6 @@ jobs:
             ;;
           23.05)
             _release_tag=$(git tag --sort=taggerdate --list 'v23.*' | tail -1)
-            git checkout $_release_tag
-            _prerelease=false
-            ;;
-          22.03)
-            _release_tag=$(git tag --sort=taggerdate --list 'v22.*' | tail -1)
             git checkout $_release_tag
             _prerelease=false
             ;;
