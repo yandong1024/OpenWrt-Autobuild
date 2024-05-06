@@ -15,11 +15,11 @@ on:
       targets:
         description: 'target devices'
         required: true
-        default: "['meson-meson8b', 'x86-64']"
+        default: "['amlogic-meson8b', 'x86-64']"
         type: choice
         options:
-        - "['meson-meson8b']"
-        - "['meson-meson8b', 'x86-64']"
+        - "['amlogic-meson8b']"
+        - "['amlogic-meson8b', 'x86-64']"
 
 jobs:
   build:
@@ -63,7 +63,7 @@ jobs:
             ;;
         esac
         case ${{ matrix.target }} in
-          meson-meson8b)    _device=onecloud          ;;
+          amlogic-meson8b)  _device=onecloud          ;;
           x86-64)           _device=x86-64            ;;
           *)                echo "wrong devices"      ;;
         esac
@@ -130,7 +130,7 @@ jobs:
         cat ${{ steps.var.outputs.artifact }}/config.buildinfo
         rm -rf ${{ steps.var.outputs.artifact }}/{packages,*.buildinfo,*.json,*.manifest,*kernel.bin,*-rootfs.*,sha256sums}
 
-    - if: matrix.target == 'meson-meson8b'
+    - if: matrix.target == 'amlogic-meson8b'
       name: Assemble burn firmware
       run: |
         cp ./scripts/onecloud_burn_customization.sh .

@@ -2,7 +2,7 @@
 
 set -ex
 
-cp -rf ../target/linux/meson target/linux/
+cp -rf ../target/linux/amlogic target/linux/
 
 source ./01_customize_packages.sh
 

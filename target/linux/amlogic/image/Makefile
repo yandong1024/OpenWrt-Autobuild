@@ -41,24 +41,6 @@ define Build/uImage-meson
 	mkimage -A arm -O linux -T script -C none -a 0 -e 0 -n "s805_autoscript.scr" -d s805_autoscript.txt  $(KDIR)/s805_autoscript.scr
 endef
 
-### Devices ###
-define Device/Default
-  PROFILES = Default $$(DEVICE_NAME)
-  KERNEL_NAME := Image
-  KERNEL_DEPENDS = $$(wildcard $(DTS_DIR)/$$(DEVICE_DTS).dts)
-  KERNEL := kernel-bin | uImage-meson none
-  FILESYSTEMS := ext4
-  IMAGES := sdcard.img
-  IMAGE/sdcard.img := sdcard-img $$(DEVICE_NAME)
-endef
-
-define Device/thunder-onecloud
-  DEVICE_DTS := amlogic/meson8b-onecloud
-  DEVICE_TITLE := Thunder OneCloud
-  KERNEL_LOADADDR := 0x00208000
-endef
-ifeq ($(SUBTARGET),meson8b)
-  TARGET_DEVICES += thunder-onecloud
-endif
+include $(SUBTARGET).mk
 
 $(eval $(call BuildImage))
