@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-2.0-only
+
 define Device/Default
   PROFILES = Default $$(DEVICE_NAME)
   KERNEL_NAME := Image
