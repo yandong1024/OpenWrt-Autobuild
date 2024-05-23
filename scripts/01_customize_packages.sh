@@ -29,10 +29,6 @@ cp -rf ../immortalwrt/package/emortal/cpufreq package/new/
 rm -rf package/network/services/dnsmasq
 cp -rf ../immortalwrt/package/network/services/dnsmasq package/network/services/
 
-# mbedtls
-rm -rf ./package/libs/mbedtls
-cp -rf ../immortalwrt/package/libs/mbedtls package/libs/
-
 # OLED
 git clone -b master --depth 1 --single-branch https://github.com/NateLol/luci-app-oled package/new/luci-app-oled
 
