@@ -5,6 +5,8 @@ set -ex
 
 # patch kernel
 cp -f ../lede/target/linux/generic/hack-6.6/952-add-net-conntrack-events-support-multiple-registrant.patch target/linux/generic/hack-6.6/
+# disable KERNEL_WERROR
+sed -i 's,imply KERNEL_WERROR,#imply KERNEL_WERROR,g' toolchain/gcc/Config.version
 # fullconenat-nft
 cp -rf ../immortalwrt/package/network/utils/fullconenat-nft package/network/utils/
 # libnftnl
