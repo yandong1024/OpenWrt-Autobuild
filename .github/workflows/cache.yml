@@ -21,7 +21,7 @@ jobs:
 
     - name: Clone OpenWrt
       run: |
-        ./scripts/00_init.sh openwrt
+        git clone https://github.com/openwrt/openwrt.git
 
     - name: Get variable
       working-directory: ./openwrt
