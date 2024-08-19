@@ -32,9 +32,6 @@ cp -rf ../immortalwrt/package/network/services/dnsmasq package/network/services/
 # OpenClash
 git clone -b master --depth 1 --single-branch https://github.com/vernesong/OpenClash package/new/luci-app-openclash
 
-# Realtek RTL8125/8125B/8126A
-git clone -b master --depth 1 --single-branch https://github.com/sbwml/package_kernel_r8125 package/new/r8125
-
 # Realtek RTL8152/8153
 cp -rf ../immortalwrt/package/kernel/r8152 package/new/
 
