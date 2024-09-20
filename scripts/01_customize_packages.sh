@@ -3,9 +3,6 @@
 # create directory
 [[ ! -d package/new ]] && mkdir -p package/new
 
-# Access Control
-cp -rf ../immortalwrt-luci/applications/luci-app-accesscontrol package/new/
-
 # arpbind
 cp -rf ../immortalwrt-luci/applications/luci-app-arpbind package/new/
 
