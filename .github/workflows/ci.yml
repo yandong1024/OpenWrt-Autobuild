@@ -7,11 +7,12 @@ on:
       branch:
         description: 'your local repo branch'
         required: true
-        default: 23.05
+        default: '24.10'
         type: choice
         options:
-        - master
-        - 23.05
+        - 'master'
+        - '24.10'
+        - '23.05'
       targets:
         description: 'target devices'
         required: true
@@ -71,6 +72,11 @@ jobs:
           master)
             _release_tag=snapshot-r$(date +%g.%j)
             _prerelease=true
+            ;;
+          24.10)
+            _release_tag=$(git tag --sort=taggerdate --list 'v24.*' | tail -1)
+            git checkout $_release_tag
+            _prerelease=false
             ;;
           23.05)
             _release_tag=$(git tag --sort=taggerdate --list 'v23.*' | tail -1)
