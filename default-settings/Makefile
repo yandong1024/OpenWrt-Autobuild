@@ -27,7 +27,6 @@ define Package/default-settings
 		+kmod-wireguard \
 		+libustream-mbedtls \
 		+luci \
-		+luci-compat \
 		+@LUCI_LANG_zh_Hans
 endef
 
