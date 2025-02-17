@@ -8,6 +8,7 @@ __get_other-repos() {
     git clone -b master --depth 1 --single-branch https://github.com/immortalwrt/immortalwrt immortalwrt
     git clone -b master --depth 1 --single-branch https://github.com/immortalwrt/packages immortalwrt-packages
     git clone -b master --depth 1 --single-branch https://github.com/immortalwrt/luci immortalwrt-luci
+    echo "src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main" >> ./openwrt/feeds.conf.default
 }
 
 __patch_fullconenat() {
