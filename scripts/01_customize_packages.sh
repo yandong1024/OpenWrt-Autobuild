@@ -26,9 +26,6 @@ cp -rf ../immortalwrt/package/emortal/cpufreq package/new/
 rm -rf package/network/services/dnsmasq
 cp -rf ../immortalwrt/package/network/services/dnsmasq package/network/services/
 
-# OpenClash
-git clone -b master --depth 1 --single-branch https://github.com/vernesong/OpenClash package/new/luci-app-openclash
-
 # Realtek RTL8152/8153
 cp -rf ../immortalwrt/package/kernel/r8152 package/new/
 
